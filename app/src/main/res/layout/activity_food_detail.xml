@@ -71,25 +71,36 @@
                 android:gravity="center_vertical"
                 android:layout_marginTop="@dimen/step_2">
 
-            <View
-                    android:layout_width="@dimen/dimen_10"
-                    android:layout_height="@dimen/dimen_10"
-                    android:background="@drawable/icon_plus"
-                    android:onClick="@{() -> viewModel.onItemCountChanged(true)}"/>
+            <LinearLayout
+                    android:layout_width="@dimen/dimen_clickable_area"
+                    android:layout_height="@dimen/dimen_clickable_area"
+                    android:onClick="@{() -> viewModel.onItemCountChanged(true)}"
+                    android:gravity="center">
+                <View
+                        android:layout_width="@dimen/step_1"
+                        android:layout_height="@dimen/step_1"
+                        android:background="@drawable/icon_plus"/>
+
+            </LinearLayout>
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/dimen_text_12"
-                    android:layout_marginLeft="@dimen/step_1"
                     android:text="@{viewModel.selectedItemCount}"/>
 
-            <View
-                    android:layout_width="@dimen/dimen_10"
-                    android:layout_height="@dimen/dimen_10"
-                    android:background="@drawable/icon_minus"
-                    android:layout_marginLeft="@dimen/step_1"
-                    android:onClick="@{() -> viewModel.onItemCountChanged(false)}"/>
+            <LinearLayout
+                    android:layout_width="@dimen/dimen_clickable_area"
+                    android:layout_height="@dimen/dimen_clickable_area"
+                    android:onClick="@{() -> viewModel.onItemCountChanged(false)}"
+                    android:gravity="center">
+
+                <View
+                        android:layout_width="@dimen/step_1"
+                        android:layout_height="@dimen/step_1"
+                        android:background="@drawable/icon_minus"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

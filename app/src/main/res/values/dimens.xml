@@ -11,7 +11,11 @@
     <dimen name="step_4">32dp</dimen>
     <dimen name="step_half">4dp</dimen>
 
+    <dimen name="dimen_clickable_area">48dp</dimen>
+
     <dimen name="dimen_10">10dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_20">20dp</dimen>
 
     <dimen name="dimen_text_16">16sp</dimen>
     <dimen name="dimen_text_default">14sp</dimen>
