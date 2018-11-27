@@ -160,7 +160,7 @@ class CartViewModel : BaseViewModel<CartActivity> () {
                     else
                         EventBus.getDefault().post(ShowToastEvent("${ResourceUtils.getString(R.string.promo_error_no_min_total)}${FareConstants.PROMO_FREE_VALUE}"))
                 }
-                else -> {}
+                else -> {EventBus.getDefault().post(ShowToastEvent(ResourceUtils.getString(R.string.promo_error_invalid)))}
             }
         }
     }
