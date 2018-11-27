@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="cartViewModel" type="test.f22.f22testapplication.activity.CartViewModel"/>
+        <import type="android.view.View"/>
+    </data>
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_centerInParent="true" android:text="@string/empty_cart"
+                android:visibility="@{cartViewModel.isCartEmpty ? View.VISIBLE : View.GONE}"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{cartViewModel.isCartEmpty ? View.GONE : View.VISIBLE}">
+
+            <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/checkoutButton">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_above="@id/checkoutButton">
+
+                    <android.support.v7.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/itemsList"/>
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider_height"
+                            android:background="@color/black"
+                            android:layout_marginTop="@dimen/step_2"/>
+
+                    <android.support.v7.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/fareList"
+                            android:layout_marginTop="@dimen/step_2"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="@dimen/step_2"
+                            android:padding="@dimen/step_1">
+
+                        <EditText
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/coupon"
+                                android:layout_weight="1"
+                                android:text="@={cartViewModel.promoApplied}"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/apply"
+                                android:layout_weight="0"
+                                android:onClick="@{() -> cartViewModel.applyPromo()}"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/proceed_checkout"
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/checkoutButton"
+                    android:textColor="@color/black"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

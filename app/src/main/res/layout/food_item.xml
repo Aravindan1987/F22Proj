@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="foodItemViewModel" type="test.f22.f22testapplication.activity.FoodListAdapter.FoodItemViewModel"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardElevation="4dp"
+            android:layout_margin="@dimen/step_half">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/step_1">
+
+            <ImageView
+                    android:layout_width="@dimen/list_image_size"
+                    android:layout_height="@dimen/list_image_size"
+                    app:image_url="@{foodItemViewModel.imageUrl}"
+                    android:id="@+id/foodImage"
+                    android:layout_margin="@dimen/step_1"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/foodImage">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{foodItemViewModel.itemName}"/>
+
+                <Space android:layout_width="match_parent" android:layout_height="@dimen/step_1"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                    <View
+                            android:layout_width="@dimen/dimen_10"
+                            android:layout_height="@dimen/dimen_10"
+                            android:background="@drawable/icon_rating_star"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/dimen_text_12"
+                            android:layout_marginLeft="@dimen/step_half"
+                            android:text="@{foodItemViewModel.rating}"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/dimen_text_12"
+                            android:layout_marginLeft="@dimen/step_4"
+                            android:text="@{foodItemViewModel.fare}"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <Space android:layout_width="match_parent" android:layout_height="@dimen/step_1"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/dividerVertical"/>
+
+                <Space android:layout_width="match_parent" android:layout_height="@dimen/step_1"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                    <View
+                            android:layout_width="@dimen/dimen_10"
+                            android:layout_height="@dimen/dimen_10"
+                            android:padding="@dimen/step_1"
+                            android:background="@drawable/icon_plus"
+                            android:onClick="@{() -> foodItemViewModel.onItemCountChanged(true)}"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/dimen_text_12"
+                            android:layout_marginLeft="@dimen/step_1"
+                            android:text="@{foodItemViewModel.selectedItemCount}"/>
+
+                    <View
+                            android:layout_width="@dimen/dimen_10"
+                            android:layout_height="@dimen/dimen_10"
+                            android:padding="@dimen/step_1"
+                            android:background="@drawable/icon_minus"
+                            android:layout_marginLeft="@dimen/step_1"
+                            android:onClick="@{() -> foodItemViewModel.onItemCountChanged(false)}"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

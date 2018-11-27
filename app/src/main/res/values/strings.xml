@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">F22 Test Application</string>
+
+    <string name="rupee">₹</string>
+
+    <string name="menu_filter">Filter</string>
+    <string name="menu_cart">Cart</string>
+
+    <!--Screen Titles-->
+    <string name="home_title">Home</string>
+    <string name="food_detail_title">Food Item Detail</string>
+    <string name="cart_title">Cart</string>
+
+    <!--Filter List Items-->
+    <string name="filter_list_fare">Price Low to High</string>
+    <string name="filter_list_rating">Rating</string>
+
+    <!--Button Strings-->
+    <string name="proceed_checkout">Proceed to Checkout</string>
+    <string name="apply">Apply</string>
+
+    <!--Textfield Hints-->
+    <string name="coupon">Apply Coupon</string>
+
+    <!--Error Messages-->
+    <string name="promo_error_invalid">Promo Invalid</string>
+    <string name="promo_error_no_min_total">To apply this apromo, minimum total must be greater than ₹</string>
+
+    <!--Other Strings-->
+    <string name="cart_total_item_fare">Total items added</string>
+    <string name="applied">Applied</string>
+    <string name="empty_cart">Cart is Empty</string>
+
+    <!--Cart Fare List Texts-->
+    <string name="total_selected">Total Fare of Selected Items</string>
+    <string name="delivery_charges">Delivery Charges</string>
+    <string name="total_payable">Total Payable</string>
+</resources>

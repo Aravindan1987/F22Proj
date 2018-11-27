@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="viewModel" type="test.f22.f22testapplication.activity.FoodItemDetailViewModel"/>
+    </data>
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/step_2"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <ImageView
+                android:layout_width="@dimen/detail_image_size"
+                android:layout_height="@dimen/detail_image_size"
+                app:image_url="@{viewModel.imageUrl}"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_text_16"
+                android:layout_marginTop="@dimen/step_2"
+                android:text="@{viewModel.itemName}"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:background="?android:attr/dividerVertical"
+                android:layout_marginTop="@dimen/step_2"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/step_2">
+
+            <View
+                    android:layout_width="@dimen/dimen_10"
+                    android:layout_height="@dimen/dimen_10"
+                    android:background="@drawable/icon_rating_star"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_text_12"
+                    android:layout_marginLeft="@dimen/step_half"
+                    android:text="@{viewModel.rating}"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_text_12"
+                    android:layout_marginLeft="@dimen/step_4"
+                    android:text="@{viewModel.fare}"
+                    android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:background="?android:attr/dividerVertical"
+                android:layout_marginTop="@dimen/step_2"/>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="@dimen/step_2">
+
+            <View
+                    android:layout_width="@dimen/dimen_10"
+                    android:layout_height="@dimen/dimen_10"
+                    android:background="@drawable/icon_plus"
+                    android:onClick="@{() -> viewModel.onItemCountChanged(true)}"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_text_12"
+                    android:layout_marginLeft="@dimen/step_1"
+                    android:text="@{viewModel.selectedItemCount}"/>
+
+            <View
+                    android:layout_width="@dimen/dimen_10"
+                    android:layout_height="@dimen/dimen_10"
+                    android:background="@drawable/icon_minus"
+                    android:layout_marginLeft="@dimen/step_1"
+                    android:onClick="@{() -> viewModel.onItemCountChanged(false)}"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
